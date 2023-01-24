@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.hazmunicipality.world.inventory.EnvelopeUIMenu;
@@ -16,11 +17,14 @@ import java.util.HashMap;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
+import ca.weblite.objc.Recipient;
+
 public class EnvelopeUIScreen extends AbstractContainerScreen<EnvelopeUIMenu> {
 	private final static HashMap<String, Object> guistate = EnvelopeUIMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	EditBox Recipient;
 
 	public EnvelopeUIScreen(EnvelopeUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -30,7 +34,7 @@ public class EnvelopeUIScreen extends AbstractContainerScreen<EnvelopeUIMenu> {
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 166;
+		this.imageHeight = 200;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("hazmunicipality:textures/screens/envelope_ui.png");
@@ -40,6 +44,7 @@ public class EnvelopeUIScreen extends AbstractContainerScreen<EnvelopeUIMenu> {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderTooltip(ms, mouseX, mouseY);
+		Recipient.render(ms, mouseX, mouseY, partialTicks);
 	}
 
 	@Override
@@ -58,12 +63,15 @@ public class EnvelopeUIScreen extends AbstractContainerScreen<EnvelopeUIMenu> {
 			this.minecraft.player.closeContainer();
 			return true;
 		}
+		if (Recipient.isFocused())
+			return Recipient.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
 	}
 
 	@Override
 	public void containerTick() {
 		super.containerTick();
+		Recipient.tick();
 	}
 
 	@Override
@@ -80,5 +88,9 @@ public class EnvelopeUIScreen extends AbstractContainerScreen<EnvelopeUIMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		Recipient = new EditBox(this.font, this.leftPos + 6, this.topPos + 6, 120, 20, Component.literal(""));
+		guistate.put("text:Recipient", Recipient);
+		Recipient.setMaxLength(32767);
+		this.addWidget(this.Recipient);
 	}
 }
