@@ -1,7 +1,6 @@
 
 package net.mcreator.hazmunicipality.world.inventory;
 
-import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -19,13 +18,12 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.hazmunicipality.init.HazmunicipalityModMenus;
-import net.mcreator.hazmunicipality.init.HazmunicipalityModItems;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-public class EnvelopeUIMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
+public class MailboxUIMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
 	public final Player entity;
@@ -34,11 +32,11 @@ public class EnvelopeUIMenu extends AbstractContainerMenu implements Supplier<Ma
 	private final Map<Integer, Slot> customSlots = new HashMap<>();
 	private boolean bound = false;
 
-	public EnvelopeUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(HazmunicipalityModMenus.ENVELOPE_UI.get(), id);
+	public MailboxUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(HazmunicipalityModMenus.MAILBOX_UI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
-		this.internal = new ItemStackHandler(100);
+		this.internal = new ItemStackHandler(0);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -76,33 +74,11 @@ public class EnvelopeUIMenu extends AbstractContainerMenu implements Supplier<Ma
 				}
 			}
 		}
-		this.customSlots.put(99, this.addSlot(new SlotItemHandler(internal, 99, 151, 7) {
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return (HazmunicipalityModItems.STAMP.get() == stack.getItem());
-			}
-		}));
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 7, 79) {
-		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 43, 79) {
-		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 61, 79) {
-		}));
-		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 79, 79) {
-		}));
-		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 97, 79) {
-		}));
-		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 115, 79) {
-		}));
-		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 133, 79) {
-		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 25, 79) {
-		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
-				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 35 + 84 + si * 18));
+				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
-			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 35 + 142));
+			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
 	}
 
 	@Override
@@ -117,16 +93,16 @@ public class EnvelopeUIMenu extends AbstractContainerMenu implements Supplier<Ma
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 9) {
-				if (!this.moveItemStackTo(itemstack1, 9, this.slots.size(), true))
+			if (index < 0) {
+				if (!this.moveItemStackTo(itemstack1, 0, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 9, false)) {
-				if (index < 9 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 9 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 0, false)) {
+				if (index < 0 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 0 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 9, 9 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 0, 0 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;

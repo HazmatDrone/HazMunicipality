@@ -15,13 +15,66 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "envelope_ui"
+    },
+    {
+      "name": "Stamp",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stamp"
+    },
+    {
+      "name": "MailBox",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mail_box"
+    },
+    {
+      "name": "MailboxUI",
+      "type": "gui",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mailbox_ui"
+    },
+    {
+      "name": "EnvelopeRecipe",
+      "type": "recipe",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "envelope_recipe"
+    },
+    {
+      "name": "StampRecipe",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stamp_recipe"
+    },
+    {
+      "name": "Sendenvelope",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sendenvelope",
+      "metadata": {
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.hazmunicipality.envelope": "Envelope"
+      "block.hazmunicipality.mail_box": "Mail Box",
+      "item.hazmunicipality.envelope": "Envelope",
+      "item.hazmunicipality.stamp": "Stamp"
     }
   },
   "foldersRoot": {

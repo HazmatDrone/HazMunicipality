@@ -1,1 +1,11 @@
-.mcreator/workspaceBackups/
+.gradle/
+.mcreator/
+build/
+gradle/
+run/
+gradlew
+gradlew.bat
+build.gradle
+mcreator.gradle
+.classpath
+.settings/

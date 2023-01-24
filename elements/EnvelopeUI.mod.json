@@ -14,12 +14,12 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": ""
+            "value": "CUSTOM:Stamp"
           },
-          "id": 0,
+          "id": 99,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
+          "name": "Slot #99",
           "x": 276,
           "y": 26
         }
@@ -30,10 +30,10 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 1,
+          "id": 0,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
+          "name": "Slot #0",
           "x": 132,
           "y": 98
         }
@@ -48,7 +48,7 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #2",
-          "x": 150,
+          "x": 168,
           "y": 98
         }
       },
@@ -62,7 +62,7 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #3",
-          "x": 168,
+          "x": 186,
           "y": 98
         }
       },
@@ -76,7 +76,7 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #4",
-          "x": 186,
+          "x": 204,
           "y": 98
         }
       },
@@ -90,7 +90,7 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #5",
-          "x": 204,
+          "x": 222,
           "y": 98
         }
       },
@@ -104,7 +104,7 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #6",
-          "x": 222,
+          "x": 240,
           "y": 98
         }
       },
@@ -118,7 +118,7 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #7",
-          "x": 240,
+          "x": 258,
           "y": 98
         }
       },
@@ -128,11 +128,11 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 8,
+          "id": 1,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #8",
-          "x": 258,
+          "name": "Slot #1",
+          "x": 150,
           "y": 98
         }
       },

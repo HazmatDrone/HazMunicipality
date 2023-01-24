@@ -31,6 +31,7 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.hazmunicipality.init.HazmunicipalityModMenus;
 import net.mcreator.hazmunicipality.init.HazmunicipalityModItems;
+import net.mcreator.hazmunicipality.init.HazmunicipalityModBlocks;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -49,6 +50,7 @@ public class HazmunicipalityMod {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		HazmunicipalityModBlocks.REGISTRY.register(bus);
 		HazmunicipalityModItems.REGISTRY.register(bus);
 
 		HazmunicipalityModMenus.REGISTRY.register(bus);

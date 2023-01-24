@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "hazmunicipality:blocks/mailbox",
+    "up": "hazmunicipality:blocks/mailbox",
+    "north": "hazmunicipality:blocks/mailbox",
+    "east": "hazmunicipality:blocks/mailbox",
+    "south": "hazmunicipality:blocks/mailbox",
+    "west": "hazmunicipality:blocks/mailbox",
+    "particle": "hazmunicipality:blocks/mailbox"
+  },
+  "render_type": "solid"
+}

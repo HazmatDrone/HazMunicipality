@@ -1,3 +1,5 @@
 {
-  "item.hazmunicipality.envelope": "Envelope"
+  "block.hazmunicipality.mail_box": "Mail Box",
+  "item.hazmunicipality.envelope": "Envelope",
+  "item.hazmunicipality.stamp": "Stamp"
 }

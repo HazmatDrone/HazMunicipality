@@ -11,6 +11,7 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 
 import net.minecraft.world.inventory.MenuType;
 
+import net.mcreator.hazmunicipality.world.inventory.MailboxUIMenu;
 import net.mcreator.hazmunicipality.world.inventory.EnvelopeUIMenu;
 import net.mcreator.hazmunicipality.HazmunicipalityMod;
 
@@ -18,4 +19,6 @@ public class HazmunicipalityModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, HazmunicipalityMod.MODID);
 	public static final RegistryObject<MenuType<EnvelopeUIMenu>> ENVELOPE_UI = REGISTRY.register("envelope_ui",
 			() -> IForgeMenuType.create(EnvelopeUIMenu::new));
+	public static final RegistryObject<MenuType<MailboxUIMenu>> MAILBOX_UI = REGISTRY.register("mailbox_ui",
+			() -> IForgeMenuType.create(MailboxUIMenu::new));
 }
