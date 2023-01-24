@@ -1,0 +1,50 @@
+{
+  "mod_elements": [
+    {
+      "name": "Envelope",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "envelope"
+    },
+    {
+      "name": "EnvelopeUI",
+      "type": "gui",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "envelope_ui"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.hazmunicipality.envelope": "Envelope"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "hazmunicipality",
+    "modName": "Municipality",
+    "version": "1.0.0",
+    "author": "HazmatDrone",
+    "websiteURL": "https://github.com/HazmatDrone/hazmunicipality",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.19.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.hazmunicipality",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200348217
+}
