@@ -1,0 +1,11 @@
+{
+  "_fv": 34,
+  "_type": "tab",
+  "definition": {
+    "name": "Municipality",
+    "icon": {
+      "value": "CUSTOM:Envelope"
+    },
+    "showSearch": true
+  }
+}

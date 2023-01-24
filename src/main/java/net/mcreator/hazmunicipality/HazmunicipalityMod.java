@@ -29,6 +29,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.hazmunicipality.init.HazmunicipalityModTabs;
 import net.mcreator.hazmunicipality.init.HazmunicipalityModMenus;
 import net.mcreator.hazmunicipality.init.HazmunicipalityModItems;
 
@@ -46,7 +47,7 @@ public class HazmunicipalityMod {
 
 	public HazmunicipalityMod() {
 		MinecraftForge.EVENT_BUS.register(this);
-
+		HazmunicipalityModTabs.load();
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		HazmunicipalityModItems.REGISTRY.register(bus);

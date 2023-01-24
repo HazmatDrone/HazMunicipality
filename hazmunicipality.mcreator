@@ -15,13 +15,22 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "envelope_ui"
+    },
+    {
+      "name": "Municipality",
+      "type": "tab",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "municipality"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.hazmunicipality.envelope": "Envelope"
+      "item.hazmunicipality.envelope": "Envelope",
+      "itemGroup.tabmunicipality": "Municipality"
     }
   },
   "foldersRoot": {
