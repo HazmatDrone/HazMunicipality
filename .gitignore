@@ -4,9 +4,10 @@
 build/
 gradle/
 run/
+
+.classpath
+.project
 gradlew
 gradlew.bat
 build.gradle
 mcreator.gradle
-.classpath
-.project
