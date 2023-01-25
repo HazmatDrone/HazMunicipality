@@ -3,6 +3,14 @@ Municipality is a mod focused on adding blocks and items allowing players to
 better interact with others in a roleplay-focused multiplayer server, such as
 mail, post boxes and vending machines for long distance messaging and trade.
 
+## Contributing
+Mod is being managed with [MCreator]. Texture files are made in [Aseprite]
+and models are made in [BlockBench].
+
+[MCreator]: https://mcreator.net/
+[Aseprite]: https://www.aseprite.org/
+[BlockBench]: https://www.blockbench.net/
+
 ## Planned Features
 
 ### Envelopes
